@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get the parameters from the snap settings
+controller=$(snapctl get controller)
+project=$(snapctl get project)
+registration-token=$(snapctl get registration-token)
+
+# Store the credentials
+cd $SNAP
+bin/agent --controller $controller --project $project --registration-token $registration-token -state-dir $SNAP_DATA/var/lib/deviceplane
+
+# Restart the service
+snapctl restart ${SNAP_NAME}.deviceplace-agent
