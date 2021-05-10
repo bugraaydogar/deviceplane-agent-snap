@@ -1,4 +1,4 @@
-name: deviceplace-agent
+name: deviceplane-agent
 base: core20
 version: '0.1'
 summary: Deviceplane is the simplest way to access and manage remote fleets.
@@ -22,7 +22,7 @@ parts:
     plugin: go
       
 apps:
-  deviceplace-agent:
+  deviceplane-agent:
     command: bin/agent
     daemon: simple
     plugs:
@@ -38,7 +38,3 @@ apps:
       - network-bind
       - network-control
       - greengrass-support
-
-layout:
-  /etc/deviceplane:
-    bind: $SNAP_DATA/etc/deviceplane
