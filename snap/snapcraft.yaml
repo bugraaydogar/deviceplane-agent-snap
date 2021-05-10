@@ -22,8 +22,8 @@ parts:
     plugin: go
       
 apps:
-  deviceplane-agent:
-    command: bin/agent
+  agent-deamon:
+    command: bin/agent --controller https://cloud.deviceplane.com:443/api --project 'yourprojectid' --registration-token 'yourtoken' --conf-dir $SNAP_DATA/etc/deviceplane --state-dir $SNAP_DATA/var/lib/deviceplane
     daemon: simple
     plugs:
       - network
